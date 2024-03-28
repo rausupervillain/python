@@ -1,0 +1,51 @@
+grade = 92.5
+text = 'your grade is %f' % grade
+print(text)
+
+#shows your grade is 92.500000
+
+#in here, %f is replaced by the variable grade, even if it's in the middle of the apostrophes
+#another observation is that the grade shows up as 92.500000 instead of just 92.5
+#its because %f is a float variable, meaning it expects a decimal value, so it shows a lot of decimals
+#we can limited that by adding between % and f the numbers of decimals we want, in this case, 2
+#so it stays as %.2f, a '.' followed by the numbers of decimal
+
+text = 'your grade is %.2f' % grade
+print(text)
+
+#shows your grade is 92.50
+
+#we can even call the string variable using %s
+#this time i want the grade to show up only the integrer numbers in the grade, so i will %i, intead
+#to use multiple variables, we put % after the apostrophes and between parentheses separated by commas
+#we put the variables. the parentheses is not required if youre using only 1 variable
+#another observation, the order of variables in the parentheses is the order that is going to be showed in the print
+
+subject = 'biology'
+text = 'your grade is %i on %s' % (grade, subject)
+print(text)
+
+#shows your grade is 92 on biology
+
+#so to show a string variable, use %s
+#to show a float variable, use %f
+#to show integer numbers, use %d or %i
+
+#buuuuuuuuuut theres a modern way to do the same thing above
+#only use curly brackets, don't even need to especify the variable
+
+grade = 92.5
+subject = 'biology'
+text = 'your grade is {} on {}' .format(grade, subject)
+print(text)
+
+#shows your grade is 92.5 on biology
+
+#i just can't specify that i wanted a integer number instead of a float
+#just one more code, length, or len
+#its basically asking for the length of the variable
+
+length = len(text)
+print(length)
+
+#shows 29, because 'your grade is 92.5 on biology' has 29 characters
